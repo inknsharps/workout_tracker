@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Workout } = require("../../models");
+const Workout = require("../../models/Workout");
 
 // Get the last workout here
 // We first sort all the data so that the latest ID is placed up the top
@@ -35,7 +35,16 @@ router.post("/", (req, res) => {
 
 // Add an exercise to a workout (by ID) here???
 router.put("/:id", (req, res) => {
-
+    Workout.updateOne(
+        { _id: req.params.id },
+        { $push: { exercises: req.body } }
+    )
+    .then(newExercise => {
+        res.json(newExercise);
+    })
+    .catch(err => {
+        res.json(err);
+    });
 });
 
 module.exports = router;

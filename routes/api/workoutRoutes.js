@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { Workout, Exercise } = require("../../models");
 
 // Get the last workout here
 router.get("/", (req, res) => {
@@ -13,7 +14,7 @@ router.get("/range", (req, res) => {
 
 // Add a new workout here
 router.post("/", (req, res) => {
-    
+
 });
 
 // Add an exercise to a workout (by ID) here???

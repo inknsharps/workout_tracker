@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const workoutRoutes = require("./workoutroutes.js");
+const workoutRoutes = require("./workoutRoutes");
 
 router.use("/workouts", workoutRoutes);
 

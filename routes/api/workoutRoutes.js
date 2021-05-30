@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
             },
             {
                 $addFields: {
-                    totalDuration: { $sum: "$exercises.duration"}
+                    totalDuration: { $sum: "$exercises.duration" }
                 }
             }
         ])
@@ -47,7 +47,7 @@ router.get("/range", async (req, res) => {
             },
             {
                 $addFields: {
-                    totalDuration: { $sum: "$exercises.duration"}
+                    totalDuration: { $sum: "$exercises.duration" }
                 }
             }
         ])
